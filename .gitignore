@@ -9,6 +9,9 @@ Thumbs.db
 .vscode/
 .idea/
 
+# WorkBuddy AI session data
+.workbuddy-ai/
+
 # Dependencies (none currently, but good practice)
 node_modules/
 
