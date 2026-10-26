@@ -1,54 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" data-page-node-id="zY0DLjETWvfb1m0WxVmCfA">
+<head data-page-node-id="mp0PrEcaeAiTm28nlBgJ8N">
+  <meta charset="UTF-8" data-page-node-id="P8ymAANx1tMmCiyLD9mJzh">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="IlrM0JHGbtut9oYg5yt0ef">
   <title>Sound Canvas — Paint with Sound</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" data-page-node-id="jAPAWA1Q3BGyqCAueH75NK">
 </head>
-<body>
+<body data-page-node-id="IYufkQnJvSGoggQpYHDcya">
   <!-- Header -->
-  <header id="header">
-    <h1>Sound Canvas</h1>
-    <p class="subtitle">Draw on the canvas. Hear what you paint.</p>
+  <header id="header" data-page-node-id="yBKI29pVYRTIuRa97swWFY">
+    <h1 data-page-node-id="thESPrUhLQpn6VbDxXQMQY">Sound Canvas</h1>
+    <p class="subtitle" data-page-node-id="346qJtDJNdN7g9i28nZfM6">Draw on the canvas. Hear what you paint.</p>
   </header>
 
   <!-- Brush selector -->
-  <nav id="brush-bar">
-    <button class="brush-btn active" data-mode="glow" title="Smooth glowing lines with warm sine tones">
-      <span class="brush-icon glow-icon"></span>
+  <nav id="brush-bar" data-page-node-id="tv3C5aYkZvEsC8LrganDfx">
+    <button class="brush-btn active" data-mode="glow" title="Smooth glowing lines with warm sine tones" data-page-node-id="qUAIf0X6HRWem3uCtUzkSO">
+      <span class="brush-icon glow-icon" data-page-node-id="eFJq5sLjkjs8bNdOC7iWNM"></span>
       Glow
     </button>
-    <button class="brush-btn" data-mode="particle" title="Particle bursts with plucky triangle tones">
-      <span class="brush-icon particle-icon"></span>
+    <button class="brush-btn" data-mode="particle" title="Particle bursts with plucky triangle tones" data-page-node-id="gL2OPAkFzRjl4US8pSaCcY">
+      <span class="brush-icon particle-icon" data-page-node-id="E6A3UVAvFebezb574N2KQN"></span>
       Particle
     </button>
-    <button class="brush-btn" data-mode="ribbon" title="Flowing ribbons with rich sawtooth tones">
-      <span class="brush-icon ribbon-icon"></span>
+    <button class="brush-btn" data-mode="ribbon" title="Flowing ribbons with rich sawtooth tones" data-page-node-id="bJseHg35uCBGCrKv7NUuB9">
+      <span class="brush-icon ribbon-icon" data-page-node-id="dpzhfTlrIBtrYEE9EQsm3k"></span>
       Ribbon
     </button>
   </nav>
 
   <!-- Canvas layers: main (persistent strokes) + overlay (particles/animation) -->
-  <canvas id="canvas"></canvas>
-  <canvas id="overlay"></canvas>
+  <canvas id="canvas" data-page-node-id="Xamko5YxNXCnR4uLuhbNfD"></canvas>
+  <canvas id="overlay" data-page-node-id="zkHnF1CAHbCCCUOYlXmgt4"></canvas>
 
   <!-- Audio unavailable notice -->
-  <div id="audio-notice" class="hidden">
+  <div id="audio-notice" class="hidden" data-page-node-id="3G80CCAmtvnGVue6v2Mu64">
     Your browser does not support Web Audio. Visual mode only — you can still paint!
   </div>
 
   <!-- Footer controls -->
-  <footer id="footer">
-    <div class="controls">
-      <button id="play-btn" title="Replay your painting as music">
-        <span class="play-icon">&#9654;</span> Play
+  <footer id="footer" data-page-node-id="TD6B7BJhGQlb8G1sBJyczR">
+    <div class="controls" data-page-node-id="U3kF7D9feOX8x4SiD6aQY6">
+      <button id="play-btn" title="Replay your painting as music" data-page-node-id="pT9sQGP9kREqjgd19WRHBr">
+        <span class="play-icon" data-page-node-id="mxwxyAcs2eXqBKlUbo8wln">&#9654;</span> <span class="play-label">Play</span>
       </button>
-      <button id="clear-btn" title="Clear the canvas">
-        <span class="clear-icon">&#10006;</span> Clear
+      <button id="clear-btn" title="Clear the canvas" data-page-node-id="KrJc1rV7plFWJep6dFKi0g">
+        <span class="clear-icon" data-page-node-id="BRb3ooUpAjjKAEsbeeyd7s">&#10006;</span> Clear
       </button>
     </div>
-    <span id="status">Ready — click and drag to paint</span>
+    <span id="status" data-page-node-id="aEhGZOAr6TdYooogD6hffs">Ready — click and drag to paint</span>
   </footer>
 
   <script src="js/script.js"></script>

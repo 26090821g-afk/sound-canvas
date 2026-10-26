@@ -501,6 +501,7 @@
     this.playbackStrokeIdx = 0;
     this.playbackPointIdx = 1; // start from 2nd point of first stroke
     this.playbackStartTime = performance.now();
+    this.lastNoteTime = 0; // reset throttle so the first playback note always plays
 
     // Record the start time of the first stroke for relative timing
     this.playbackBaseTime = this.strokes[0].points[0].t;
@@ -512,15 +513,15 @@
     };
     this.playbackStrokes.push(firstStroke);
 
-    // Disable controls during playback
-    this.setControlsEnabled(false);
-    this.setStatus('Playing back...');
+    // Update UI: play button becomes Stop, clear disabled
+    this.setPlaybackUI(true);
+    this.setStatus('Playing back — click Stop to interrupt');
   };
 
   SoundCanvas.prototype.stopPlayback = function () {
     this.playing = false;
     this.playbackStrokes = [];
-    this.setControlsEnabled(true);
+    this.setPlaybackUI(false);
 
     var count = this.strokes.length;
     this.setStatus('Ready — ' + count + ' stroke' + (count > 1 ? 's' : '') + ' painted. Press Play to hear again.');
@@ -610,19 +611,22 @@
     }
   };
 
-  SoundCanvas.prototype.setControlsEnabled = function (enabled) {
+  /**
+   * Toggle playback UI state.
+   * During playback: play button becomes "Stop" (still clickable), clear disabled.
+   * When idle: play button shows "Play", clear enabled.
+   */
+  SoundCanvas.prototype.setPlaybackUI = function (playing) {
     var playBtn = document.getElementById('play-btn');
     var clearBtn = document.getElementById('clear-btn');
-    if (playBtn) playBtn.disabled = !enabled;
-    if (clearBtn) clearBtn.disabled = !enabled;
-
-    if (enabled) {
-      var playBtn2 = document.getElementById('play-btn');
-      if (playBtn2) playBtn2.classList.remove('playing');
-    } else {
-      var playBtn3 = document.getElementById('play-btn');
-      if (playBtn3) playBtn3.classList.add('playing');
+    if (playBtn) {
+      playBtn.classList.toggle('playing', playing);
+      var label = playBtn.querySelector('.play-label');
+      if (label) label.textContent = playing ? 'Stop' : 'Play';
+      var icon = playBtn.querySelector('.play-icon');
+      if (icon) icon.innerHTML = playing ? '&#10074;&#10074;' : '&#9654;';
     }
+    if (clearBtn) clearBtn.disabled = playing;
   };
 
   SoundCanvas.prototype.setMode = function (mode) {
