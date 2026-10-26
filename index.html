@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sound Canvas — Paint with Sound</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <h1>Sound Canvas</h1>
+    <p class="subtitle">Draw on the canvas. Hear what you paint.</p>
+  </header>
+
+  <!-- Brush selector -->
+  <nav id="brush-bar">
+    <button class="brush-btn active" data-mode="glow" title="Smooth glowing lines with warm sine tones">
+      <span class="brush-icon glow-icon"></span>
+      Glow
+    </button>
+    <button class="brush-btn" data-mode="particle" title="Particle bursts with plucky triangle tones">
+      <span class="brush-icon particle-icon"></span>
+      Particle
+    </button>
+    <button class="brush-btn" data-mode="ribbon" title="Flowing ribbons with rich sawtooth tones">
+      <span class="brush-icon ribbon-icon"></span>
+      Ribbon
+    </button>
+  </nav>
+
+  <!-- Canvas layers: main (persistent strokes) + overlay (particles/animation) -->
+  <canvas id="canvas"></canvas>
+  <canvas id="overlay"></canvas>
+
+  <!-- Audio unavailable notice -->
+  <div id="audio-notice" class="hidden">
+    Your browser does not support Web Audio. Visual mode only — you can still paint!
+  </div>
+
+  <!-- Footer controls -->
+  <footer id="footer">
+    <div class="controls">
+      <button id="play-btn" title="Replay your painting as music">
+        <span class="play-icon">&#9654;</span> Play
+      </button>
+      <button id="clear-btn" title="Clear the canvas">
+        <span class="clear-icon">&#10006;</span> Clear
+      </button>
+    </div>
+    <span id="status">Ready — click and drag to paint</span>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
