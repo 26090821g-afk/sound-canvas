@@ -173,6 +173,32 @@ html, body {
   -webkit-backdrop-filter: blur(8px);
 }
 
+/* Play button: made more prominent after user trial showed it was overlooked */
+#play-btn {
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #a0d0a0;
+  border-color: rgba(100, 180, 100, 0.25);
+}
+
+/* Hint animation: draws attention to Play after first stroke */
+#play-btn.hint {
+  animation: hintPulse 2s ease-in-out infinite;
+}
+
+@keyframes hintPulse {
+  0%, 100% {
+    box-shadow: 0 0 4px rgba(120, 240, 120, 0.2);
+    border-color: rgba(100, 180, 100, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(120, 240, 120, 0.5);
+    border-color: rgba(120, 200, 120, 0.6);
+    transform: scale(1.05);
+  }
+}
+
 #play-btn:hover {
   color: #f0f0ff;
   border-color: rgba(120, 200, 120, 0.5);

@@ -24,17 +24,15 @@ _(The render loop currently does clear + redraw the main canvas each frame for p
 
 ## User Trial
 
-_(To be completed after testing with another person.)_
+**Who tried it:** Xiuwei Zhao — a classmate unfamiliar with the project.
 
-**Who tried it:** _[describe the person briefly, e.g., "a classmate unfamiliar with the project"]_
+**What they tried first:** Upon opening the app, they immediately started doodling on the canvas with the Glow brush, without first noticing the UI buttons (brush selector, Play, Clear). The canvas itself drew their attention first.
 
-**What they tried first:** _[what did they do when handed the app?]_
+**Where they hesitated:** After finishing a painting, they did not realise the painting could be replayed. They did not notice the Play button and only tried clicking it after I pointed it out. The playback feature was not self-discoverable for this user.
 
-**Where they hesitated:** _[any confusion about controls, brush modes, playback?]_
+**Whether the response made sense:** Yes. They quickly noticed that their drawing actions produced synchronised sound, and understood that the visual trail and the audio were linked. The audio-visual connection was intuitive.
 
-**Whether the response made sense:** _[did they understand the audio-visual connection?]_
-
-**What I changed based on the trial:** _[one specific improvement, or why I kept the design as-is]_
+**What I changed based on the trial:** The Play button was not easily discoverable. Based on this observation, I made the Play button larger, gave it a more prominent colour, and added a pulsing hint animation that appears after the user finishes their first stroke. The goal is to draw attention to the playback feature without requiring an external explanation.
 
 ---
 

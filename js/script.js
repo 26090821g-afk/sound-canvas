@@ -315,6 +315,12 @@
 
     if (this.currentStroke && this.currentStroke.points.length > 1) {
       this.strokes.push(this.currentStroke);
+
+      // After the first stroke, draw attention to the Play button (user trial finding)
+      if (this.strokes.length === 1) {
+        var playBtn = document.getElementById('play-btn');
+        if (playBtn) playBtn.classList.add('hint');
+      }
     }
     this.currentStroke = null;
     this.setStatus(this.strokes.length > 0
@@ -694,6 +700,7 @@
     var playBtn = document.getElementById('play-btn');
     if (playBtn) {
       playBtn.addEventListener('click', function () {
+        playBtn.classList.remove('hint'); // user found it — stop hinting
         if (self.playing) {
           self.stopPlayback();
         } else {
@@ -724,6 +731,8 @@
         case '3': self.setMode('ribbon'); break;
         case ' ':
           e.preventDefault();
+          var pb = document.getElementById('play-btn');
+          if (pb) pb.classList.remove('hint');
           self.startPlayback();
           break;
         case 'c':
