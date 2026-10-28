@@ -2,7 +2,7 @@
 
 An interactive generative-art experience where your mouse movements on a canvas produce both visual trails and musical notes. Paint a picture, hear it sing.
 
-![Sound Canvas screenshot](screenshot.png)
+<img width="1402" height="731" alt="截屏2026-10-28 20 10 52" src="https://github.com/user-attachments/assets/3d1e920c-1dab-436b-9edc-287f6c7c6c7f" />
 
 ## The Idea
 
